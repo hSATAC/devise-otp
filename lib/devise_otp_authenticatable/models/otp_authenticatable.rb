@@ -32,7 +32,7 @@ module Devise::Models
     end
 
     def otp_provisioning_identifier
-      "#{email}/#{self.class.otp_uri_application || Rails.application.class.parent_name}"
+      "#{login}/#{self.class.otp_uri_application || Rails.application.class.parent_name}"
     end
 
 
