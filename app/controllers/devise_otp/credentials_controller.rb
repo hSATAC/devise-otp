@@ -45,7 +45,7 @@ class DeviseOtp::CredentialsController < DeviseController
       redirect_to new_session_path(resource_name)
     else
       if resource.otp_challenge_valid? && resource.validate_otp_token(params[resource_name][:token], recovery)
-        set_flash_message(:success, :signed_in) if is_navigational_format?
+        otp_set_flash_message(:success, :signed_in) if is_navigational_format?
         sign_in(resource_name, resource)
 
         otp_refresh_credentials_for(resource)
