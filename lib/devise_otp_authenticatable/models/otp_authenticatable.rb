@@ -43,7 +43,7 @@ module Devise::Models
       reset_otp_persistence
       update_attributes!(:otp_enabled => false,
              :otp_session_challenge => nil, :otp_challenge_expires => nil,
-             :otp_recovery_counter => 0)
+             :otp_recovery_counter => 1)
     end
 
     def reset_otp_credentials!
